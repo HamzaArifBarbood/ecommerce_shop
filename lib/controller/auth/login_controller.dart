@@ -46,6 +46,7 @@ showPassword(){
       statusrequest=handlingData(response);
       if(statusrequest==StatusRequest.success){
         if(response['status']=='success'){
+          print(response);
            myservices.sharedPreferences.setInt("id", response["data"]["user_id"]);
            myservices.sharedPreferences.setString("username", response["data"]["user_name"]);
            myservices.sharedPreferences.setString("email", response["data"]["user_email"]);

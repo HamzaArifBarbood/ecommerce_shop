@@ -49,6 +49,8 @@ class MyTranslation extends Translations {
           '40': 'الذهاب لتسجيل الدخول',
           '41': 'تهانينا',
           '42': 'تم التسجيل بنجاح',
+          '43': 'تم  إرسال رمز التحقق الى البريد الإلكتروني',
+
           
         },
         'en': {
@@ -100,6 +102,7 @@ class MyTranslation extends Translations {
           '40': 'Go To Login',
           '41': 'Congratulations',
           '42': 'Successfully registered',
+          '43': 'A verification code has been sent to your email address',
           
 
         }

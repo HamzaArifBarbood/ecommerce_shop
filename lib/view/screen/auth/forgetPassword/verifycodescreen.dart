@@ -38,7 +38,7 @@ class VerifyCodeScreen extends StatelessWidget {
                   const SizedBox(
                     height: 20,
                   ),
-                  CustomTextBodyAuth(textBody: '4'.tr),
+                  CustomTextBodyAuth(textBody:" ${'43'.tr} ${controller.email}"),
                   const SizedBox(
                     height: 55,
                   ),

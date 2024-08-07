@@ -35,7 +35,7 @@ class SignUpScreen extends StatelessWidget {
           child:  GetBuilder<SignUpControllerImp>(
             builder: (controller) {
               return HandlingDataRequest(statusrequest: controller.statusrequest, widget:Container(
-                padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 15),
+                padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 15),
                 child: Form (
                   key: controller.formstate,
                   child: ListView(
@@ -48,7 +48,7 @@ class SignUpScreen extends StatelessWidget {
                           textBody:
                               '5'.tr),
                       const SizedBox(
-                        height: 55,
+                        height: 30,
                       ),
                       customTextFormAuth(
                         valid: (val) {

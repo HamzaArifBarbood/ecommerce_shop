@@ -8,7 +8,7 @@ import 'package:mvc_commers/core/functions/checkInternet.dart';
 class Crud {
   Future<Either<StatusRequest, Map>> postData(String linkeuri, Map data) async {
     try {
-      if ( await checkInternet()) {
+      // if ( await checkInternet()) {
           print("Internet");
         var responce = await http.post(Uri.parse(linkeuri), body: data);
           print("object");
@@ -22,9 +22,9 @@ class Crud {
           
           return const Left(StatusRequest.serverfailure);
         }
-      } else {
-        return const Left(StatusRequest.offlinefailure);
-      }
+      // } else {
+      //   return const Left(StatusRequest.offlinefailure);
+      // }
     } catch (_) {
       print("crud exeption");
       return const Left(StatusRequest.serverExeception);

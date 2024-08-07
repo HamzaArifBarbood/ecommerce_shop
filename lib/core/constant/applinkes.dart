@@ -1,5 +1,5 @@
 class AppLinkes{
-  static const String server="http://10.200.211.18/ecommerce";
+  static const String server="http://10.200.212.20/ecommerce";
 
   static const String test="$server/test.php";
   //=====================Auth========================
