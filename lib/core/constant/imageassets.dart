@@ -9,7 +9,7 @@ class AppImageassets{
 
   static String routAnimation='assets/animation';
   static String loading='$routAnimation/loading.json';
-  static String server='$routAnimation/server.json';
+  static String server='$routAnimation/servererror.json';
   static String nodata='$routAnimation/nodata.json';
   static String offline='$routAnimation/offline.json';
 

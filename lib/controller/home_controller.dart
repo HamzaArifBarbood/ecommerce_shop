@@ -1,8 +1,12 @@
 import 'package:get/get.dart';
+import 'package:mvc_commers/core/class/statusRequest.dart';
+import 'package:mvc_commers/core/functions/handlingdata.dart';
 import 'package:mvc_commers/core/services/services.dart';
+import 'package:mvc_commers/data/datasourse/remote/homeData.dart';
 
-class HomeController extends GetxController{
-
+abstract class HomeController extends GetxController{
+  initilData();
+  getData();
 }
 class HomeControllerimp extends HomeController{
 Myservices myservices=Get.find();
@@ -14,11 +18,43 @@ String? phone ;
 
 @override
   void onInit() {
+     getData();
+    initilData();
+    super.onInit();
+  }
+  
+  @override
+  initilData() {
   id   =  myservices.sharedPreferences.getInt('id');
   name =  myservices.sharedPreferences.getString('username');
   email=  myservices.sharedPreferences.getString('email');
   phone=  myservices.sharedPreferences.getString('phone');
+  }
+    HomeData homeData =HomeData(Get.find());
+  StatusRequest statusrequest=StatusRequest.none;
+  List categories =[];
+  List items =[];
+  
+  @override
+  getData()async {
+    statusrequest = StatusRequest.loading;
     
-    super.onInit();
+    var response = await homeData.getData();
+  
+    update();
+    statusrequest = handlingData(response);
+    print(statusrequest);
+    
+    if (statusrequest == StatusRequest.success) {
+      if (response['status'] == 'success') {
+        categories.addAll(response['categories']);
+        items.addAll(response["items"]);
+        update();
+      } else {
+        return StatusRequest.nodata;
+      }
+    }
+    
+    
   }
 }
