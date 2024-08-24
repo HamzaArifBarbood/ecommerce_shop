@@ -1,19 +1,19 @@
 import 'dart:convert';
 
 class ItemsModel {
-  String? itemId;
+  int? itemId;
   String? itemName;
   String? itemNameAr;
   String? itemDesc;
   String? itemDescAr;
-  String? itemCount;
-  String? itemActive;
+  int? itemCount;
+  int? itemActive;
   String? itemImage;
-  String? itemPrice;
-  String? itemDiscount;
+  int? itemPrice;
+  int? itemDiscount;
   String? itemDate;
-  String? itemcat;
-  String? categorieId;
+  int? itemcat;
+  int? categorieId;
   String? categorieName;
   String? categorieNameAr;
   String? categorieImage;
@@ -45,6 +45,7 @@ class ItemsModel {
     itemDescAr = json["item_desc_ar"];
     itemCount = json["item_count"];
     itemPrice = json["item_price"];
+    itemImage = json["item_image"];
     itemDiscount = json["item_discount"];
     itemActive = json["item_Active"];
     itemDate = json["item_date"];
@@ -63,6 +64,7 @@ class ItemsModel {
     data["item_desc"]=itemDesc;
     data["item_desc_ar"]=itemDescAr;
     data["item_count"]=itemCount;
+    data["item_image"]=itemImage;
     data["item_price"]=itemPrice;
     data["item_discount"]=itemDiscount;
     data["item_Active"]=itemActive;
