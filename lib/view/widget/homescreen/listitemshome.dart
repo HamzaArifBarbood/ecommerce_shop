@@ -31,25 +31,36 @@ class ItemCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-        width: 180,
-        decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(12),
-            image: DecorationImage(
-                image: NetworkImage(
-              "${AppLinkes.imagesitems}/${itemsModel.itemImage}",
-            ))),
-        child: Container(
-          padding: const EdgeInsets.all(10),
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(12),
-            color: Colors.black.withOpacity(0.3),
-          ),
-          child: Text(
+    return Stack(
+      children: [
+     Container(
+      padding: EdgeInsets.all(10),
+         width: 180,
+         decoration: BoxDecoration(
+             borderRadius: BorderRadius.circular(12),
+             ),
+         child: Image.network(
+               "${AppLinkes.imagesitems}/${itemsModel.itemImage}",
+             )),
+            Container(
+            width: 180,
+         padding: const EdgeInsets.all(10),
+         decoration: BoxDecoration(
+           borderRadius: BorderRadius.circular(12),
+           color: Colors.black.withOpacity(0.3),
+         )),Positioned(
+          top: 5,
+          left: 8,
+          child:
+         Text(
+
             "${itemsModel.itemName}",
             style: const TextStyle(
                 color: Colors.white, fontWeight: FontWeight.bold, fontSize: 15),
-          ),
-        ));
+          )
+          )
+      ],
+    );
+    
   }
 }

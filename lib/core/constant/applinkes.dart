@@ -1,5 +1,8 @@
 class AppLinkes{
+  //أي بي الاتصال بمودم ياسر
   static const String server="http://10.200.201.91/ecommerce";
+  //آي بي الاتصال بشبكة الجوال المحلية
+  // static const String server="http://192.168.43.245/ecommerce";
 
   static const String test="$server/test.php";
   //=====================Auth========================

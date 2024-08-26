@@ -8,11 +8,11 @@ import 'package:mvc_commers/core/constant/AppColors.dart';
 import 'package:mvc_commers/core/constant/applinkes.dart';
 import 'package:mvc_commers/core/constant/imageassets.dart';
 import 'package:mvc_commers/core/functions/handlingdata.dart';
-import 'package:mvc_commers/view/widget/home/customAppBar.dart';
-import 'package:mvc_commers/view/widget/home/customtitle.dart';
-import 'package:mvc_commers/view/widget/home/customcardhome.dart';
-import 'package:mvc_commers/view/widget/home/listcategorieshome.dart';
-import 'package:mvc_commers/view/widget/home/listitemshome.dart';
+import 'package:mvc_commers/view/widget/homescreen/customAppBar.dart';
+import 'package:mvc_commers/view/widget/homescreen/customtitle.dart';
+import 'package:mvc_commers/view/widget/homescreen/customcardhome.dart';
+import 'package:mvc_commers/view/widget/homescreen/listcategorieshome.dart';
+import 'package:mvc_commers/view/widget/homescreen/listitemshome.dart';
 import 'package:rotated_corner_decoration/rotated_corner_decoration.dart';
 
 class HomeScreen extends StatelessWidget {

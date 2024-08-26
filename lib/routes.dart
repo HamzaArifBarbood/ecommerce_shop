@@ -12,6 +12,7 @@ import 'package:mvc_commers/view/screen/auth/forgetPassword/successresetpassword
 import 'package:mvc_commers/view/screen/auth/forgetPassword/verifycodescreen.dart';
 import 'package:mvc_commers/view/screen/homescreent.dart';
 import 'package:mvc_commers/view/screen/languageScreen.dart';
+import 'package:mvc_commers/view/screen/mainhomepage.dart';
 import 'package:mvc_commers/view/screen/onBoardingScreen.dart';
 
 
@@ -28,6 +29,6 @@ import 'package:mvc_commers/view/screen/onBoardingScreen.dart';
   GetPage(name:AppRoutes.verifyCodeForgetPassword , page: () =>const VerifyCodeScreen()),
   GetPage(name:AppRoutes.verifyCodeSignUp , page: () =>const VerifyCodeSignUpScreen()),
   GetPage(name:AppRoutes.signUp , page: () =>SignUpScreen()),
-  GetPage(name:AppRoutes.home , page: () =>const HomeScreen()),
+  GetPage(name:AppRoutes.home , page: () =>const MainHomePage()),
  
   ];
