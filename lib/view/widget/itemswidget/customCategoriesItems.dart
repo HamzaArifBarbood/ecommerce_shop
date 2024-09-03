@@ -2,21 +2,23 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:mvc_commers/controller/home_controller.dart';
+import 'package:mvc_commers/controller/items_controller.dart';
 import 'package:mvc_commers/core/constant/AppColors.dart';
 import 'package:mvc_commers/core/constant/applinkes.dart';
 import 'package:mvc_commers/core/functions/translateDatabase.dart';
 import 'package:mvc_commers/data/model/categoriesmodel.dart';
 
-class ListCategoriesHome extends GetView<HomeControllerimp> {
-  const ListCategoriesHome({super.key});
+class ListCategoriesItems extends GetView<itemsControllerImp> {
+  const ListCategoriesItems({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 100,
+    return SizedBox(
+      height: 25,
+      
       child: ListView.separated(
         separatorBuilder: (context, index) => const SizedBox(
-          width: 10,
+          width: 5,
         ),
         scrollDirection: Axis.horizontal,
         itemCount: controller.categories.length,
@@ -31,7 +33,7 @@ class ListCategoriesHome extends GetView<HomeControllerimp> {
   }
 }
 
-class CategoriesCard extends GetView<HomeControllerimp> {
+class CategoriesCard extends GetView<itemsControllerImp> {
   final CategoriesModel categoriesModel;
   const CategoriesCard({super.key, required this.categoriesModel});
 
@@ -39,32 +41,27 @@ class CategoriesCard extends GetView<HomeControllerimp> {
   Widget build(BuildContext context) {
     return InkWell(
       onTap:(){
-        controller.goToItem(controller.categories,categoriesModel.categorieId!);
-        
+     controller.changeCat(categoriesModel.categorieId!);
       } ,
-      child: Column(
-        children: [
-          Container(
-              width: 60,
-              padding: const EdgeInsets.all(10),
-              height: 70,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(12),
-                color: AppColors.thirdColor,
-              ),
-              child: SvgPicture.network(
-                "${AppLinkes.imagescategories}/${categoriesModel.categorieImage}",
-                colorFilter:
-                    ColorFilter.mode(AppColors.secondColor, BlendMode.srcIn),
-              )),
-          Text(
+      child: GetBuilder<itemsControllerImp>(
+        builder: (controller) {
+          return Container(
+            alignment: Alignment.center,
+             padding:const EdgeInsets.symmetric(horizontal: 10,),
+             
+              
+              decoration:controller.selectedCat==categoriesModel.categorieId? BoxDecoration(
+                border: Border(bottom: BorderSide(color: AppColors.primaryColor, width: 2))            // borderRadius: BorderRadius.circular(12),
+                // color:controller.selectedCat == categoriesModel.categorieId? AppColors.thirdColor: Colors.grey[200],
+              ):null,
+              child: Text(
             "${translateDatabase(categoriesModel.categorieNameAr, categoriesModel.categorieName)}",
             style: TextStyle(
                 fontSize: 13,
-                color: AppColors.balck,
+                color: AppColors.grey2,
                 fontWeight: FontWeight.bold),
-          ),
-        ],
+          ) );
+        }
       ),
     );
   }

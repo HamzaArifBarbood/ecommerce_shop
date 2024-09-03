@@ -18,6 +18,9 @@ static const String resetpassword="$server/forgetpassword/resetpassword.php";
 //=====================home========================
 static const String homepage="$server/home.php";
 
+//=====================items========================
+static const String items="$server/items/items.php";
+
 //=====================images========================
  static const String imagesStatic="$server/upload";
  

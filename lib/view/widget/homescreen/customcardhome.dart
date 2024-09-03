@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:mvc_commers/controller/home_controller.dart';
 import 'package:mvc_commers/core/constant/AppColors.dart';
 
-class CustomCardHome extends StatelessWidget {
+class CustomCardHome extends GetView<HomeControllerimp> {
   final String title;
   final String body;
   const CustomCardHome({super.key, required this.title, required this.body});
@@ -17,18 +19,12 @@ class CustomCardHome extends StatelessWidget {
                                     color: AppColors.primaryColor),
                                 height: 150,
                                 width: double.infinity,
-                                child:  ListTile(
-                                  title: Text( title,
-                                      style: TextStyle(
-                                          color: Colors.white, fontSize: 20)),
-                                  subtitle: Text(body,
-                                      style: TextStyle(
-                                          color: Colors.white, fontSize: 20)),
-                                ),
+                               
                               ),
                               Positioned(
                                   top: -20,
-                                  right: -20,
+                                  right:controller.lang=="en"? -20:null,
+                                  left: controller.lang=="ar"? -20:null,
                                   child: Container(
                                     width: 160,
                                     height: 160,
@@ -36,7 +32,21 @@ class CustomCardHome extends StatelessWidget {
                                         borderRadius:
                                             BorderRadius.circular(6150),
                                         color: AppColors.secondColor),
-                                  ))
+                                  )),Positioned(
+                                    top: 35,
+                                    child: SizedBox(
+                                     
+                                      width:Get.width ,
+                                      child: ListTile(
+                                      title: Text( title,
+                                          style: TextStyle(
+                                              color: Colors.white, fontSize: 20)),
+                                      subtitle: Text(body,
+                                          style: TextStyle(
+                                              color: Colors.white, fontSize: 20)),
+                                                                      ),
+                                    ),
+                                  )
                             ],
                           )
                           ;

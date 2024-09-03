@@ -8,7 +8,7 @@ import 'package:mvc_commers/core/constant/AppColors.dart';
 import 'package:mvc_commers/core/constant/applinkes.dart';
 import 'package:mvc_commers/core/constant/imageassets.dart';
 import 'package:mvc_commers/core/functions/handlingdata.dart';
-import 'package:mvc_commers/view/widget/homescreen/customAppBar.dart';
+import 'package:mvc_commers/view/widget/customAppBar.dart';
 import 'package:mvc_commers/view/widget/homescreen/customtitle.dart';
 import 'package:mvc_commers/view/widget/homescreen/customcardhome.dart';
 import 'package:mvc_commers/view/widget/homescreen/listcategorieshome.dart';
@@ -32,20 +32,20 @@ class HomeScreen extends StatelessWidget {
                       child: ListView(
                         children: [
                           CustomAppBar(
-                            titleappbar: "Find Product",
+                            titleappbar: "46".tr,
                             onPressedSearch: () {},
                             onPressedIcon: () {},
                           ),
-                          const CustomCardHome(
-                            title: "A summer Surprise",
-                            body: "Cashback 20%",
+                           CustomCardHome(
+                            title: "47".tr,
+                            body:"${'48'.tr} 20%",
                           ),
-                          const CustomTitle(
-                            title: "Categories",
+                           CustomTitle(
+                            title: "45".tr,
                           ),
                           const ListCategoriesHome(),
-                          const CustomTitle(
-                            title: "Product for you",
+                           CustomTitle(
+                            title: "44".tr,
                           ),
                           const ListItemsHome()
                         ],

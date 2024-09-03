@@ -52,13 +52,13 @@ showPassword(){
            myservices.sharedPreferences.setString("email", response["data"]["user_email"]);
            myservices.sharedPreferences.setString("phone", response["data"]["user_phone"]);
            myservices.sharedPreferences.setString("step", "2");
-           print("objext1");
-           Get.offNamed(AppRoutes.home);
+           
+           Get.offNamed(AppRoutes.mainhomescreen);
         }
         else{
 
         Get.defaultDialog(title: "Warning", middleText: "Email Or Password Not Found");
-        print("object2");
+       
         statusrequest =StatusRequest.nodata;
       }
           

@@ -50,7 +50,16 @@ class MyTranslation extends Translations {
           '41': 'تهانينا',
           '42': 'تم التسجيل بنجاح',
           '43': 'تم  إرسال رمز التحقق الى البريد الإلكتروني',
-
+          '44':"منتج لك",
+          '45': "التصنيفات",
+          '46':"البحث عن منتج",
+          '47':'مفأجاة الصيف',
+          '48':'استرداد نقدي بقيمة',
+          '49':"تقييم",
+          '50':"الرئيسية",
+          '51':"الإعدادات",
+          '52':"المفضلة",
+          '53':"الملف",
           
         },
         'en': {
@@ -103,7 +112,17 @@ class MyTranslation extends Translations {
           '41': 'Congratulations',
           '42': 'Successfully registered',
           '43': 'A verification code has been sent to your email address',
-          
+          '44':"Product for you",
+          '45':"Categories",
+          '46':"Find Product",
+          '47':"A summer Surprise",
+           '48':"Cashback",
+           '49':"Rating",
+           '50':"Home",
+           '51':"Settings",
+           '52':"favorite",
+           '53':"profile",
+
 
         }
       };

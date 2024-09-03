@@ -21,7 +21,7 @@ class HandlingDataVeiw extends StatelessWidget {
                 :statusrequest == StatusRequest.serverExeception
                 ? Center(child: Lottie.asset(AppImageassets.server,width:250,height:250),)
                 : statusrequest == StatusRequest.nodata
-                    ? const Center(child: Text("no data"),)
+                    ?Center(child: Lottie.asset(AppImageassets.nodata,width:250,height:250),)
                     : widget;
   }
 }

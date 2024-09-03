@@ -25,9 +25,9 @@ class CustomItemBottomAppBar extends StatelessWidget {
           children: [
             Icon(
               iconData,
-              color: isactive == true ? AppColors.primaryColor : Colors.black,
+              color: isactive == true ? AppColors.primaryColor : AppColors.grey2,
             ),
-            Text(textbutton,style: TextStyle(color: isactive==true?AppColors.primaryColor:Colors.black,),)
+            Text(textbutton,style: TextStyle(color: isactive==true?AppColors.primaryColor:AppColors.grey2),)
           ],
         ),
       );

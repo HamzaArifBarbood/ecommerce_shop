@@ -15,7 +15,7 @@ class MainHomePage extends StatelessWidget {
       return Scaffold(
         floatingActionButton: FloatingActionButton(
           onPressed: () {},
-          backgroundColor: Colors.blue,
+          backgroundColor: AppColors.primaryColor,
           shape: const CircleBorder(),
           child: const Icon(Icons.shopping_basket_outlined,color: Colors.white,),
         ),

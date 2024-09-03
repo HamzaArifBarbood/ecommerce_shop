@@ -11,9 +11,11 @@ import 'package:mvc_commers/view/screen/auth/success_signupscreen.dart';
 import 'package:mvc_commers/view/screen/auth/forgetPassword/successresetpasswordscreen.dart';
 import 'package:mvc_commers/view/screen/auth/forgetPassword/verifycodescreen.dart';
 import 'package:mvc_commers/view/screen/homescreent.dart';
+import 'package:mvc_commers/view/screen/itemsscreen.dart';
 import 'package:mvc_commers/view/screen/languageScreen.dart';
 import 'package:mvc_commers/view/screen/mainhomepage.dart';
 import 'package:mvc_commers/view/screen/onBoardingScreen.dart';
+import 'package:mvc_commers/view/screen/productdetailsscreen.dart';
 
 
 
@@ -29,6 +31,8 @@ import 'package:mvc_commers/view/screen/onBoardingScreen.dart';
   GetPage(name:AppRoutes.verifyCodeForgetPassword , page: () =>const VerifyCodeScreen()),
   GetPage(name:AppRoutes.verifyCodeSignUp , page: () =>const VerifyCodeSignUpScreen()),
   GetPage(name:AppRoutes.signUp , page: () =>SignUpScreen()),
-  GetPage(name:AppRoutes.home , page: () =>const MainHomePage()),
+  GetPage(name:AppRoutes.mainhomescreen , page: () =>const MainHomePage()),
+  GetPage(name:AppRoutes.itemsscreen , page: () =>const ItemsScreen()),
+  GetPage(name:AppRoutes.productdetails , page: () => const ProductDetailsScreen()),
  
   ];

@@ -18,17 +18,17 @@ class OnBoardingScreen extends StatelessWidget {
         
         child: Column(children: [
           Expanded(
-            flex: 2,
+            flex: 3,
             child: CustomSliderOnBording()
           ,
           ),
           
           Expanded(
-            flex: 1,
+           
             child: Column(children: [
               Spacer(flex: 1,),
                 CustomDotControllerOnbording(),
-                 Spacer(flex: 2,),
+                 Spacer(flex: 1,),
                  CustomeButtonOnBording()
               
             ],),

@@ -15,17 +15,20 @@ class Crud {
         if (responce.statusCode == 200 || responce.statusCode == 201) {
           // convert from Json string to Dart Object
          
-          var responceBody = jsonDecode(responce.body);
+          Map responceBody = jsonDecode(responce.body);
         
           return Right(responceBody);
-        } else {
+        }
+         else {
           
           return const Left(StatusRequest.serverfailure);
         }
-      // } else {
+      // } 
+      // else {
       //   return const Left(StatusRequest.offlinefailure);
       // }
-    } catch (_) {
+    }
+     catch (_) {
       
       return const Left(StatusRequest.serverExeception);
     }

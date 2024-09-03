@@ -9,10 +9,7 @@ checkInternet() async{
     
     return true;
   }
-  else{
-   print("no Internet");
-    return false;
-  }
+ 
   }
  on SocketException catch (_){
      print("internet exeption");
