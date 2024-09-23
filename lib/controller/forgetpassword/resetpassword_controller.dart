@@ -67,7 +67,7 @@ showPassword2(){
   @override
   void onInit() {
      email=Get.arguments['email'];
-     print(email);
+    
      passwordcontroller = TextEditingController();
      rePasswordcontroller   = TextEditingController();
     super.onInit();

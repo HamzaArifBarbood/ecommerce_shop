@@ -4,7 +4,6 @@ import 'package:mvc_commers/controller/forgetpassword/forgetpassword_controller.
 import 'package:mvc_commers/core/class/hadlinDataveiw.dart';
 import 'package:mvc_commers/core/class/statusRequest.dart';
 import 'package:mvc_commers/core/constant/AppColors.dart';
-import 'package:mvc_commers/core/functions/handlingdata.dart';
 import 'package:mvc_commers/core/functions/validinput.dart';
 import 'package:mvc_commers/view/widget/auth/custombuttonauth.dart';
 import 'package:mvc_commers/view/widget/auth/customtextbodyauth.dart';
@@ -30,7 +29,7 @@ class ForgetPasswordScreen extends StatelessWidget {
         ),
         body: GetBuilder<ForgetPasswordControllerImp>(
           builder: (controller) {
-            return  HandlingDataVeiw(statusrequest: controller.statusrequest!, widget:
+            return  HandlingDataVeiw(statusrequest: controller.statusrequest, widget:
              Container(
               padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 15),
               child: Form(

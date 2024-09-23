@@ -1,17 +1,11 @@
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:lottie/lottie.dart';
 import 'package:mvc_commers/controller/items_controller.dart';
 import 'package:mvc_commers/core/class/hadlinDataveiw.dart';
-import 'package:mvc_commers/core/constant/AppColors.dart';
-import 'package:mvc_commers/core/constant/applinkes.dart';
-import 'package:mvc_commers/core/constant/imageassets.dart';
-import 'package:mvc_commers/core/functions/handlingdata.dart';
 import 'package:mvc_commers/data/model/itemsmodel.dart';
 import 'package:mvc_commers/view/widget/customAppBar.dart';
 import 'package:mvc_commers/view/widget/itemswidget/customCategoriesItems.dart';
-import 'package:mvc_commers/view/widget/itemswidget/customitemslist.dart';
+import 'package:mvc_commers/view/widget/itemswidget/customitemsCard.dart';
 
 class ItemsScreen extends StatelessWidget{
   const ItemsScreen({super.key});
@@ -26,9 +20,10 @@ class ItemsScreen extends StatelessWidget{
           child: ListView(
             children: [
               CustomAppBar(
-                titleappbar: "46".tr,
+                textsearchfild: "46".tr,
                 onPressedSearch: () {},
-                onPressedIcon: () {},
+                isHidden: true,
+              
               ),
               const ListCategoriesItems(),
               SizedBox(height: 40,),
@@ -45,7 +40,7 @@ class ItemsScreen extends StatelessWidget{
                   crossAxisSpacing: 8                ),
                 itemCount: controller.data.length,
                 itemBuilder: (BuildContext context, int index) {
-                  return CustomItemsList(itemsModel: ItemsModel.fromjson(controller.data[index]));
+                  return CustomItemsCard(itemsModel: ItemsModel.fromjson(controller.data[index]),);
                 },
               ))
               ],

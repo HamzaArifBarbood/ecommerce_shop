@@ -1,5 +1,7 @@
 import 'package:get/get.dart';
 import 'package:get/get_state_manager/src/simple/get_controllers.dart';
+import 'package:mvc_commers/controller/cart_controller.dart';
+import 'package:mvc_commers/core/class/statusRequest.dart';
 import 'package:mvc_commers/data/model/itemsmodel.dart';
 
 abstract class ProductDetailsController extends GetxController{
@@ -29,13 +31,25 @@ List subitems=[
     "active":0
   },
 ];
+StatusRequest statusRequest=StatusRequest.none;
+int countitems=0;
+CartControllerImp controllerCart= Get.put(CartControllerImp());
  late ItemsModel itemsModel;
- initeData(){
-  itemsModel=Get.arguments["itemsModel"];
+ initeData()async{
+ 
+itemsModel=Get.arguments["itemsModel"];
+ await getcountitems();
+ }
+ getcountitems()async{
+   statusRequest=StatusRequest.loading;
+   countitems= await controllerCart.getCountitems(itemsModel.itemId!);
+   statusRequest=StatusRequest.success;
+   update();
  }
  @override
   void onInit() {
     initeData();
+    
     super.onInit();
   }
 }

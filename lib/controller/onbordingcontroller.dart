@@ -10,7 +10,7 @@ abstract class OnbordingController extends GetxController{
 }
 class OnbordingControllerImp extends OnbordingController{
   int curentPage=0;
-  PageController controller=PageController();
+  PageController controllerpage=PageController();
 Myservices servises=Get.find();
   @override
   next() {
@@ -20,7 +20,7 @@ Myservices servises=Get.find();
         Get.offAllNamed(AppRoutes.login);
     }
     else{
-          controller.animateToPage(curentPage, duration: Duration(microseconds: 900), curve: Curves.linear);
+          controllerpage.animateToPage(curentPage, duration: Duration(microseconds: 900), curve: Curves.linear);
 
     }
   }

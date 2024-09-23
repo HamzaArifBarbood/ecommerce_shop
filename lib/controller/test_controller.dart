@@ -11,7 +11,7 @@ class TestController extends GetxController {
   late StatusRequest statusrequest;
   getdata() async {
     statusrequest = StatusRequest.loading;
-    print("loding...");
+   
     var response = await testdata.getdata();
 
     update();

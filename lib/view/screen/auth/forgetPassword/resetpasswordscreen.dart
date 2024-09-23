@@ -32,7 +32,7 @@ class ResetPasswordScreen extends StatelessWidget {
         ),
         body: GetBuilder<ResetPasswordControllerImp>(
           builder: (controller) {
-            return HandlingDataVeiw(statusrequest: controller.statusrequest!, widget:  Container(
+            return HandlingDataVeiw(statusrequest: controller.statusrequest, widget:  Container(
               padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 15),
               child: Center(
                 child: Form(

@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
-import 'package:mvc_commers/controller/home_controller.dart';
 import 'package:mvc_commers/controller/items_controller.dart';
 import 'package:mvc_commers/core/constant/AppColors.dart';
-import 'package:mvc_commers/core/constant/applinkes.dart';
 import 'package:mvc_commers/core/functions/translateDatabase.dart';
 import 'package:mvc_commers/data/model/categoriesmodel.dart';
 

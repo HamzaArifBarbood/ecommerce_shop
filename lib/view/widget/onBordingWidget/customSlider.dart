@@ -10,12 +10,13 @@ class CustomSliderOnBording extends GetView<OnbordingControllerImp> {
   @override
   Widget build(BuildContext context) {
     return PageView.builder(
-      controller: controller.controller,
+      controller: controller.controllerpage,
       onPageChanged: (value) {
         controller.onChangePage(value);
       },
       itemCount: onbordingList.length,
-      itemBuilder: (context, index) => Column(
+      itemBuilder: (context, index) =>
+       Column(
         children: [
           Text(
             onbordingList[index].title!,
@@ -26,12 +27,14 @@ class CustomSliderOnBording extends GetView<OnbordingControllerImp> {
             height: 50,
           ),
           index.isEven
-              ? Image.asset(
-                  onbordingList[index].image!,
-                  fit: BoxFit.fill,
-                  height: 260,
-                  width: 250,
-                )
+              ? Expanded(
+                child: Image.asset(
+                    onbordingList[index].image!,
+                    fit: BoxFit.fill,
+                    height: 260,
+                    width: 250,
+                  ),
+              )
               : Container(
                   
                   width: double.infinity,
@@ -63,12 +66,14 @@ class CustomSliderOnBording extends GetView<OnbordingControllerImp> {
             fontWeight: FontWeight.bold),
                   ),
                 )
-              : Image.asset(
-                  onbordingList[index].image!,
-                  fit: BoxFit.fill,
-                  height: 260,
-                  width: 250,
-                ),
+              : Expanded(
+                child: Image.asset(
+                    onbordingList[index].image!,
+                    fit: BoxFit.fill,
+                    height: 260,
+                    width: 250,
+                  ),
+              ),
         ],
       ),
     );

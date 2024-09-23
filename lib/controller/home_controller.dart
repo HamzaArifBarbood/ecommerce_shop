@@ -9,6 +9,7 @@ abstract class HomeController extends GetxController{
   initilData();
   getData();
   goToItem(List categories,int selectedCat);
+ 
 }
 class HomeControllerimp extends HomeController{
 Myservices myservices=Get.find();
@@ -46,7 +47,7 @@ String? lang;
   
     update();
     statusrequest = handlingData(response);
-    print(statusrequest);
+
     
     if (statusrequest == StatusRequest.success) {
       if (response['status'] == 'success') {
@@ -67,5 +68,8 @@ String? lang;
     "categories": categories,
     "selectedCat": selectedCat
    } );
+   
   }
+  
+  
 }

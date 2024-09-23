@@ -10,6 +10,8 @@ import 'package:mvc_commers/view/screen/auth/signupscreen.dart';
 import 'package:mvc_commers/view/screen/auth/success_signupscreen.dart';
 import 'package:mvc_commers/view/screen/auth/forgetPassword/successresetpasswordscreen.dart';
 import 'package:mvc_commers/view/screen/auth/forgetPassword/verifycodescreen.dart';
+import 'package:mvc_commers/view/screen/cartscreen.dart';
+import 'package:mvc_commers/view/screen/myfavoritesScreen.dart';
 import 'package:mvc_commers/view/screen/homescreent.dart';
 import 'package:mvc_commers/view/screen/itemsscreen.dart';
 import 'package:mvc_commers/view/screen/languageScreen.dart';
@@ -20,7 +22,6 @@ import 'package:mvc_commers/view/screen/productdetailsscreen.dart';
 
 
   List<GetPage<dynamic>>? routes=[
-  //GetPage(name:'/' , page: () =>const TestScreen()),
   GetPage(name:'/' , page: () =>const Languagescreen(), middlewares: [MyMiddleware()]),
   GetPage(name:AppRoutes.login , page: () =>LogInScreen()),
   GetPage(name:AppRoutes.forgetPassword , page: () =>ForgetPasswordScreen()),
@@ -34,5 +35,8 @@ import 'package:mvc_commers/view/screen/productdetailsscreen.dart';
   GetPage(name:AppRoutes.mainhomescreen , page: () =>const MainHomePage()),
   GetPage(name:AppRoutes.itemsscreen , page: () =>const ItemsScreen()),
   GetPage(name:AppRoutes.productdetails , page: () => const ProductDetailsScreen()),
+  GetPage(name:AppRoutes.myFavoritesScreen , page: () => const MyFavoritesScreen()),
+  GetPage(name:AppRoutes.itemsCartscreen , page: () => const CartScreen()),
+  GetPage(name:AppRoutes.settingsScreen , page: () => const MyFavoritesScreen()),
  
   ];

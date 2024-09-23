@@ -34,11 +34,11 @@ class ForgetPasswordControllerImp extends ForgetPasswordController {
           Get.offNamed(AppRoutes.verifyCodeForgetPassword,arguments: {
             'email':emailcontroller.text
           }  );
-           print("sacceuss");
+         
         } else {
           Get.defaultDialog(
               title: "Warning", middleText: "email is not found");
-               print("not found");
+              
         }
       }
       update();

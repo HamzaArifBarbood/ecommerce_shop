@@ -3,7 +3,6 @@ import 'package:flutter_otp_text_field/flutter_otp_text_field.dart';
 import 'package:get/get.dart';
 import 'package:mvc_commers/controller/auth/verifycodesignup_controller.dart';
 import 'package:mvc_commers/core/class/hadlinDataveiw.dart';
-import 'package:mvc_commers/core/class/statusRequest.dart';
 import 'package:mvc_commers/core/constant/AppColors.dart';
 import 'package:mvc_commers/view/widget/auth/customtextbodyauth.dart';
 import 'package:mvc_commers/view/widget/auth/customtexttitleauth.dart';

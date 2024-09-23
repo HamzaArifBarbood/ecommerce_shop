@@ -21,6 +21,18 @@ static const String homepage="$server/home.php";
 //=====================items========================
 static const String items="$server/items/items.php";
 
+//=====================favorite========================
+static const String addfav="$server/favorite/add.php";
+static const String removefav="$server/favorite/remove.php";
+static const String itemsfavorite="$server/favorite/itemsfavorite.php";
+static const String deletefromfavorites="$server/favorite/deletefromfavorites.php";
+
+//=====================cart========================
+static const String addcart="$server/cart/add.php";
+static const String deletecart="$server/cart/delete.php";
+static const String getitemscart="$server/cart/getitemscart.php";
+static const String getcountitmes="$server/cart/getcountitmes.php";
+
 //=====================images========================
  static const String imagesStatic="$server/upload";
  

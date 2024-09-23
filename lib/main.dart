@@ -30,7 +30,7 @@ class MyApp extends StatelessWidget {
       locale: controller.language,
       theme: controller.appTheme,
       initialBinding: Mybinding(),
-     getPages: routes,
+       getPages: routes,
      
     );
   }

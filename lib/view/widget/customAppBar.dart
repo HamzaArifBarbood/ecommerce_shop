@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 
 class CustomAppBar extends StatelessWidget {
-  final String titleappbar;
+  final String textsearchfild;
+  final bool isHidden;
   final void Function()? onPressedSearch;
-  final void Function()? onPressedIcon;
-  const CustomAppBar({super.key, this.onPressedSearch, required this.titleappbar, this.onPressedIcon});
+  
+  const CustomAppBar({super.key, this.onPressedSearch, required this.textsearchfild, required this.isHidden});
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +22,7 @@ class CustomAppBar extends StatelessWidget {
                   ),
                   contentPadding:
                       const EdgeInsets.symmetric(horizontal: 5, vertical: 0),
-                  hintText: titleappbar,
+                  hintText: textsearchfild,
                   hintStyle: const TextStyle(fontSize: 18),
                   filled: true,
                   fillColor: Colors.grey[200],
@@ -39,13 +40,19 @@ class CustomAppBar extends StatelessWidget {
                 color: Colors.grey[200],
                 borderRadius: BorderRadius.circular(10)),
             child: IconButton(
-                onPressed: onPressedIcon,
+                onPressed: () {
+                  
+                },
                 icon: Icon(
                   color: Colors.grey[600],
                   Icons.notifications_active_outlined,
                   size: 30,
                 )),
-          )
+          ),
+          const SizedBox(
+            width: 10,
+          ),
+        
         ],
       ),
     );

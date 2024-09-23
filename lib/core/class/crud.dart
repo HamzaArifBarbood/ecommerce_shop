@@ -9,13 +9,14 @@ class Crud {
   Future<Either<StatusRequest, Map>> postData(String linkeuri, Map data) async {
     try {
       // if ( await checkInternet()) {
-          print("Internet");
+        
         var responce = await http.post(Uri.parse(linkeuri), body: data);
-          print("object");
+       
         if (responce.statusCode == 200 || responce.statusCode == 201) {
           // convert from Json string to Dart Object
          
           Map responceBody = jsonDecode(responce.body);
+         
         
           return Right(responceBody);
         }

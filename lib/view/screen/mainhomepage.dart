@@ -3,7 +3,6 @@ import 'package:get/get.dart';
 import 'package:mvc_commers/controller/mainhomepage_controller.dart';
 import 'package:mvc_commers/core/constant/AppColors.dart';
 import 'package:mvc_commers/view/widget/mainhomepage/Custombottomappbar.dart';
-import 'package:mvc_commers/view/widget/mainhomepage/customitembottomappbar.dart';
 
 class MainHomePage extends StatelessWidget {
   const MainHomePage({super.key});
@@ -23,6 +22,7 @@ class MainHomePage extends StatelessWidget {
         
         bottomNavigationBar:const CustomBottomAppBar(),
         body: controller.pages[controller.curentPage][0],
+        
       );
     });
   }

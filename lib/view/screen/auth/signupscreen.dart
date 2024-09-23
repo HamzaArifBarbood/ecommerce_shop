@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:mvc_commers/controller/auth/signup_controller.dart';
 import 'package:mvc_commers/core/class/hadlinDataveiw.dart';
-import 'package:mvc_commers/core/class/statusRequest.dart';
 import 'package:mvc_commers/core/constant/AppColors.dart';
 import 'package:mvc_commers/core/functions/alertexitapp.dart';
 import 'package:mvc_commers/core/functions/validinput.dart';

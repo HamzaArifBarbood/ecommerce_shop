@@ -6,6 +6,7 @@ class AppImageassets{
   static String onborderImageTwo='$routImage/onboarding2.png';
   static String onborderImageThree='$routImage/onboarding3.png';
   static String onborderImageFour='$routImage/onboarding4.png';
+  static String administrator='$routImage/administrator.png';
 
   static String routAnimation='assets/animation';
   static String loading='$routAnimation/loading.json';
