@@ -1,14 +1,17 @@
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:mvc_commers/controller/seatch_controller.dart';
 import 'package:mvc_commers/core/class/statusRequest.dart';
 import 'package:mvc_commers/core/constant/routes.dart';
 import 'package:mvc_commers/core/functions/handlingdata.dart';
 import 'package:mvc_commers/core/services/services.dart';
 import 'package:mvc_commers/data/datasourse/remote/homeData.dart';
 
-abstract class HomeController extends GetxController{
+abstract class HomeController extends SearchMixController{
   initilData();
   getData();
   goToItem(List categories,int selectedCat);
+  
  
 }
 class HomeControllerimp extends HomeController{
@@ -22,10 +25,22 @@ String? lang;
 @override
   void onInit() {
      getData();
+     searchController=TextEditingController();
     initilData();
     super.onInit();
   }
+
+  goToPrudoctDetails( itemsModel) {
+    Get.toNamed(AppRoutes.productdetails,arguments: {
+      "itemsModel":itemsModel
+    });
+  }
   
+  @override
+  void onClose() {
+    searchController.dispose();
+    super.onClose();
+  }
   @override
   initilData() {
   id   =  myservices.sharedPreferences.getInt('id');
@@ -51,8 +66,8 @@ String? lang;
     
     if (statusrequest == StatusRequest.success) {
       if (response['status'] == 'success') {
-        categories.addAll(response['categories']);
-        items.addAll(response["items"]);
+        categories.addAll(response['categories']['data']);
+        items.addAll(response["items"]['data']);
         update();
       } else {
         return StatusRequest.nodata;

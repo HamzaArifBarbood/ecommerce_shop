@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:mvc_commers/controller/mainhomepage_controller.dart';
 import 'package:mvc_commers/core/constant/AppColors.dart';
+import 'package:mvc_commers/core/constant/routes.dart';
 import 'package:mvc_commers/view/widget/mainhomepage/Custombottomappbar.dart';
 
 class MainHomePage extends StatelessWidget {
@@ -13,7 +14,11 @@ class MainHomePage extends StatelessWidget {
     return GetBuilder<MainhomepageControllerImp>(builder: (controller) {
       return Scaffold(
         floatingActionButton: FloatingActionButton(
-          onPressed: () {},
+          onPressed: ()async {
+              
+              Get.toNamed(AppRoutes.itemsCartscreen);
+          },
+          
           backgroundColor: AppColors.primaryColor,
           shape: const CircleBorder(),
           child: const Icon(Icons.shopping_basket_outlined,color: Colors.white,),

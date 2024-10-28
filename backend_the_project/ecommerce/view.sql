@@ -16,7 +16,7 @@ INNER JOIN users ON users.user_id=favorites.favorite_userid
 
 
       CREATE or REPLACE VIEW cartview As
-SELECT SUM(items.item_price) as totalPrice  ,COUNT(cart_id) as quantity , items.* ,cart.* from cart
+SELECT SUM(round((items.item_price-(items.item_price*items.item_discount/100)),2)) as totalPrice  ,COUNT(cart_id) as quantity , as itempricediscount , items.* ,cart.* from cart
       INNER JOIN items on items.item_id=cart.cart_itemid
       
       GROUP by cart.cart_itemid,cart.cart_userid

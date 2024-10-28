@@ -11,7 +11,13 @@ class SettingControllerImp extends SettingController{
   @override
   logout() {
     myServices.sharedPreferences.clear();
-    Get.offAllNamed(AppRoutes.login);
+    Get.offAllNamed(AppRoutes.login, );
+    
+   
+  }
+  goToAddAddrees() {
+    
+    Get.toNamed(AppRoutes.mengamentAddreesscreen);
     
    
   }

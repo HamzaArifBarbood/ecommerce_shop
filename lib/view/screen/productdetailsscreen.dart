@@ -14,7 +14,7 @@ class ProductDetailsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-  
+   ProductDetailsControllerImp controller =Get.put(ProductDetailsControllerImp());
     return Scaffold(
       bottomNavigationBar: Container(
         margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
@@ -23,7 +23,9 @@ class ProductDetailsScreen extends StatelessWidget {
             color: AppColors.primaryColor,
             borderRadius: BorderRadius.circular(10)),
         child: MaterialButton(
-            onPressed: () {Get.toNamed(AppRoutes.itemsCartscreen);
+            onPressed: () async{
+             await controller.controllerCart.refreshPage();
+              Get.toNamed(AppRoutes.itemsCartscreen);
             },
             child: const Text(
               "Go To Cart",
@@ -54,12 +56,12 @@ class ProductDetailsScreen extends StatelessWidget {
                   ),
                   PriceAndCount(
                     count: controller.countitems,
-                    priceProduct: controller.itemsModel.itemPrice,
+                    priceProduct: controller.itemsModel.itempricediscount,
                     onAdd: ()async {
                       
                    await   controller.controllerCart
                           .add(controller.itemsModel.itemId!);
-                          await controller.getcountitems();
+                           controller.getcountitems();
                            
                     },
                     onRemove: ()async{
@@ -67,7 +69,7 @@ class ProductDetailsScreen extends StatelessWidget {
                        if(controller.countitems>0){
                                   await controller.controllerCart
                           .delete(controller.itemsModel.itemId!);
-                          await controller.getcountitems();
+                           controller.getcountitems();
                        }
                     
                        

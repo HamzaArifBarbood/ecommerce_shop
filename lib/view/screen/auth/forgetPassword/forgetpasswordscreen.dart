@@ -7,7 +7,7 @@ import 'package:mvc_commers/core/constant/AppColors.dart';
 import 'package:mvc_commers/core/functions/validinput.dart';
 import 'package:mvc_commers/view/widget/auth/custombuttonauth.dart';
 import 'package:mvc_commers/view/widget/auth/customtextbodyauth.dart';
-import 'package:mvc_commers/view/widget/auth/customtextformauth.dart';
+import 'package:mvc_commers/core/sharsed/customTextForm.dart';
 import 'package:mvc_commers/view/widget/auth/customtexttitleauth.dart';
 
 class ForgetPasswordScreen extends StatelessWidget {
@@ -47,7 +47,7 @@ class ForgetPasswordScreen extends StatelessWidget {
                     const SizedBox(
                       height: 55,
                     ),
-                    customTextFormAuth(
+                    CustomTextForm(
                       valid: (val) {
                       return  validInput(val!, 100, 5, 'email');
                       },

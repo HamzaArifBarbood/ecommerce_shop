@@ -8,7 +8,7 @@ import 'package:mvc_commers/core/functions/alertexitapp.dart';
 import 'package:mvc_commers/core/functions/validinput.dart';
 import 'package:mvc_commers/view/widget/auth/custombuttonauth.dart';
 import 'package:mvc_commers/view/widget/auth/customtextbodyauth.dart';
-import 'package:mvc_commers/view/widget/auth/customtextformauth.dart';
+import 'package:mvc_commers/core/sharsed/customTextForm.dart';
 import 'package:mvc_commers/view/widget/auth/customtextsignuporsignin.dart';
 import 'package:mvc_commers/view/widget/auth/customtexttitleauth.dart';
 import 'package:mvc_commers/view/widget/auth/logoauth.dart';
@@ -50,7 +50,7 @@ class LogInScreen extends StatelessWidget {
                   const SizedBox(
                     height: 30,
                   ),
-                  customTextFormAuth(
+                  CustomTextForm(
                     valid: (val) {
                       return validInput(val!, 100, 5, 'email');
                     },
@@ -62,7 +62,7 @@ class LogInScreen extends StatelessWidget {
                   ),
                   GetBuilder<LoginControllerImp>(
                     builder: (controller) {
-                      return customTextFormAuth(
+                      return CustomTextForm(
                           valid: (val) {
                             return validInput(val!, 15, 5, 'password');
                           },

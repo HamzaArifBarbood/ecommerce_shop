@@ -37,11 +37,12 @@ CartControllerImp controllerCart= Get.put(CartControllerImp());
  late ItemsModel itemsModel;
  initeData()async{
  
-itemsModel=Get.arguments["itemsModel"];
- await getcountitems();
+itemsModel= Get.arguments["itemsModel"];
+  getcountitems();
  }
  getcountitems()async{
    statusRequest=StatusRequest.loading;
+   update();
    countitems= await controllerCart.getCountitems(itemsModel.itemId!);
    statusRequest=StatusRequest.success;
    update();

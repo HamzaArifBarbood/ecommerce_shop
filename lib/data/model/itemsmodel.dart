@@ -1,5 +1,7 @@
 import 'dart:convert';
 
+import 'package:dartz/dartz.dart';
+
 class ItemsModel {
   int? itemId;
   String? itemName;
@@ -9,7 +11,7 @@ class ItemsModel {
   int? itemCount;
   int? itemActive;
   String? itemImage;
-  int? itemPrice;
+  String? itemPrice;
   int? itemDiscount;
   String? itemDate;
   int? itemcat;
@@ -18,6 +20,7 @@ class ItemsModel {
   String? categorieNameAr;
   String? categorieImage;
   String? categorieDateTime;
+  String? itempricediscount;
   int? favorite;
 
   ItemsModel(
@@ -38,6 +41,7 @@ class ItemsModel {
       this.categorieNameAr,
       this.categorieImage,
       this.categorieDateTime,
+      this.itempricediscount,
       this.favorite
       );
   ItemsModel.fromjson(Map<String, dynamic> json) {
@@ -47,7 +51,7 @@ class ItemsModel {
     itemDesc = json["item_desc"];
     itemDescAr = json["item_desc_ar"];
     itemCount = json["item_count"];
-    itemPrice = json["item_price"];
+    itemPrice = json["item_price"].toString();
     itemImage = json["item_image"];
     itemDiscount = json["item_discount"];
     itemActive = json["item_Active"];
@@ -58,6 +62,7 @@ class ItemsModel {
     categorieNameAr = json["categorie_name_ar"];
     categorieImage = json["categorie_image"];
     categorieDateTime = json["categorie_datetime"];
+    itempricediscount= json["itempricediscount"].toString();
     favorite = json["favorite"];
   }
   Map<String, dynamic> tojson() {
@@ -79,6 +84,7 @@ class ItemsModel {
     data["categorie_name_ar"]=categorieNameAr;
     data["categorie_image"]=categorieImage;
     data["categorie_datetime"]=categorieDateTime;
+    data["itempricediscount"]=itempricediscount;
     data["favorite"]=favorite;
     return data;
   }

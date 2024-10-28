@@ -1,5 +1,7 @@
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_state_manager/src/simple/get_controllers.dart';
+import 'package:mvc_commers/controller/seatch_controller.dart';
 import 'package:mvc_commers/core/class/statusRequest.dart';
 import 'package:mvc_commers/core/constant/routes.dart';
 import 'package:mvc_commers/core/functions/handlingdata.dart';
@@ -7,7 +9,7 @@ import 'package:mvc_commers/core/services/services.dart';
 import 'package:mvc_commers/data/datasourse/remote/itemsdata.dart';
 import 'package:mvc_commers/data/model/itemsmodel.dart';
 
-abstract class ItemsController extends GetxController {
+abstract class ItemsController extends SearchMixController {
 initialData();
 changeCat(int catID);
 getItems();
@@ -15,7 +17,7 @@ goToPrudoctDetails(ItemsModel itemsModel);
 
 
 }
-class itemsControllerImp extends ItemsController{
+class ItemsControllerImp extends ItemsController{
   List categories=[]; 
   List data=[]; 
 
@@ -57,9 +59,15 @@ Myservices myservices=Get.find();
 @override
   void onInit() {
    initialData();
+   
     super.onInit();
   }
-  
+  @override
+  void onClose() {
+    searchController.dispose();
+    super.onClose();
+  }
+
   @override
   goToPrudoctDetails( itemsModel) {
     Get.toNamed(AppRoutes.productdetails,arguments: {

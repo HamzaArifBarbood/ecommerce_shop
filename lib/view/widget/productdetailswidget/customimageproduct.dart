@@ -28,7 +28,7 @@ class CustomImageProduct extends GetView<ProductDetailsControllerImp> {
                   right: Get.width / 8,
                   left: Get.width / 8,
                   child: Hero(
-                      tag: controller.itemsModel.itemId.toString(),
+                      tag: controller.itemsModel.itemId!,
                       child: CachedNetworkImage(
                         height: 200,
                         imageUrl:

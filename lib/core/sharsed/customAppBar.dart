@@ -3,9 +3,11 @@ import 'package:flutter/material.dart';
 class CustomAppBar extends StatelessWidget {
   final String textsearchfild;
   final bool isHidden;
+  final TextEditingController mycontroller;
+  final void Function(String)? onChange;
   final void Function()? onPressedSearch;
   
-  const CustomAppBar({super.key, this.onPressedSearch, required this.textsearchfild, required this.isHidden});
+  const CustomAppBar({super.key, this.onPressedSearch, required this.textsearchfild, required this.isHidden, required this.mycontroller, this.onChange});
 
   @override
   Widget build(BuildContext context) {
@@ -15,6 +17,8 @@ class CustomAppBar extends StatelessWidget {
         children: [
           Expanded(
             child: TextFormField(
+              controller:mycontroller ,
+              onChanged:onChange ,
               decoration: InputDecoration(
                   prefixIcon: IconButton(
                     onPressed:onPressedSearch,

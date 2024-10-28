@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:mvc_commers/controller/myfavorite_controller.dart';
 import 'package:mvc_commers/core/class/hadlinDataveiw.dart';
-import 'package:mvc_commers/view/widget/customAppBar.dart';
+import 'package:mvc_commers/core/sharsed/customAppBar.dart';
 import 'package:mvc_commers/view/widget/myfavoriteswedgite/customefavoriteitmecard.dart';
 
 class MyFavoritesScreen extends StatelessWidget {
@@ -16,10 +16,7 @@ class MyFavoritesScreen extends StatelessWidget {
         padding: const EdgeInsets.all(10),
         child: ListView(
           children: [
-            CustomAppBar(
-              isHidden: true,
-              textsearchfild: "46".tr,
-            ),
+          
             GetBuilder<MyFavoriteControllerImp>(
               init: MyFavoriteControllerImp(),
               builder: (controller) {

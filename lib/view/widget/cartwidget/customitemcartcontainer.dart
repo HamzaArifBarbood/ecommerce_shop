@@ -28,7 +28,7 @@ class CustomItemCartContainer extends GetView<CartControllerImp> {
                                               .toString(),
                                          cartModel.itemName
                                               .toString())),
-                                              subtitle: Text("${cartModel.itemPrice}\$"),
+                                              subtitle: Text("${cartModel.totalPrice}\$"),
                                     ),
                                   )),
                                   Expanded(
@@ -37,11 +37,13 @@ class CustomItemCartContainer extends GetView<CartControllerImp> {
                                                        children: [
                                                        Container(margin: const EdgeInsets.only(bottom: 3),height: 20,child: IconButton(onPressed: ()async{
                                                           await controller.add(cartModel.itemId!);
+                                                           controller.refreshPage();
                                                      
                                                        },visualDensity: VisualDensity.compact, icon: const Icon(Icons.add))),
                                                        Text(cartModel.quantity.toString(),style: const TextStyle(fontFamily: "sana",),),
                                                        Container( height: 20,child: IconButton(onPressed: ()async{
                                                        await controller.delete(cartModel.itemId!);
+                                                       controller.refreshPage();
                                                      
                                                        }, alignment: Alignment.topCenter,visualDensity: VisualDensity.compact,icon: const Icon(Icons.remove))),
                                                      ],),

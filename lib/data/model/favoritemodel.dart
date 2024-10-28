@@ -7,7 +7,7 @@ class MyfavoriteModel {
   String? itemImage;
   int? itemCount;
   int? itemActive;
-  int? itemPrice;
+  String? itemPrice;
   int? itemDiscount;
   String? itemDate;
   int? itemCat;
@@ -45,7 +45,7 @@ class MyfavoriteModel {
     itemImage = json['item_image'];
     itemCount = json['item_count'];
     itemActive = json['item_active'];
-    itemPrice = json['item_price'];
+    itemPrice = json['item_price'].toString();
     itemDiscount = json['item_discount'];
     itemDate = json['item_date'];
     itemCat = json['item_cat'];

@@ -7,7 +7,7 @@ import 'package:mvc_commers/core/constant/AppColors.dart';
 import 'package:mvc_commers/core/functions/validinput.dart';
 import 'package:mvc_commers/view/widget/auth/custombuttonauth.dart';
 import 'package:mvc_commers/view/widget/auth/customtextbodyauth.dart';
-import 'package:mvc_commers/view/widget/auth/customtextformauth.dart';
+import 'package:mvc_commers/core/sharsed/customTextForm.dart';
 import 'package:mvc_commers/view/widget/auth/customtexttitleauth.dart';
 
 class ResetPasswordScreen extends StatelessWidget {
@@ -48,7 +48,7 @@ class ResetPasswordScreen extends StatelessWidget {
                         height: 55,
                       ),
                       GetBuilder<ResetPasswordControllerImp>(
-                          builder: (controller) => customTextFormAuth(
+                          builder: (controller) => CustomTextForm(
                               valid: (val) {
                                 return validInput(val!, 15, 5, 'password');
                               },
@@ -62,7 +62,7 @@ class ResetPasswordScreen extends StatelessWidget {
                               iconData: Icons.lock_outline,
                               mycontroller: controller.passwordcontroller)),
                       GetBuilder<ResetPasswordControllerImp>(
-                          builder: (controller) => customTextFormAuth(
+                          builder: (controller) => CustomTextForm(
                               valid: (val) {
                                 return validInput(val!, 100, 5, 'password');
                               },

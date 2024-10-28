@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class customTextFormAuth extends StatelessWidget {
+class CustomTextForm extends StatelessWidget {
   final String lable;
   final String hint;
   final IconData iconData;
@@ -9,7 +9,7 @@ class customTextFormAuth extends StatelessWidget {
   final TextInputType inputType;
   final bool? obscurstext; 
   final Function()? onTaped;
-  const customTextFormAuth(
+  const CustomTextForm(
       {super.key, required this.lable, required this.hint, required this.iconData, required this.mycontroller, this.valid, required this.inputType,  this.obscurstext, this.onTaped});
 
   @override
@@ -22,8 +22,9 @@ class customTextFormAuth extends StatelessWidget {
         keyboardType: inputType,
         controller: mycontroller,
         decoration: InputDecoration(
+        errorStyle: TextStyle(fontSize: 12 ,height: 0.9),
             label: Container(
-              padding: const EdgeInsets.symmetric(horizontal: 9),
+              padding: const EdgeInsets.symmetric(horizontal: 0.4),
               child: Text(
                 lable,
                 style: const TextStyle(fontSize: 18, fontWeight: FontWeight.w700),

@@ -4,11 +4,11 @@ $userid=filterRequest("userID");
 
 $categoryid=filterRequest("catID");
 //getAllData("itemsview","categorie_id=$categoryid");
-$stmt= $con->prepare("SELECT itemsview.*, 1 as favorite
+$stmt= $con->prepare("SELECT itemsview.*,round((itemsview.item_price-(itemsview.item_price*itemsview.item_discount/100)),2) as itempricediscount  , 1 as favorite
 from itemsview  inner join favorites on itemsview.item_id = favorites.favorite_itemid  and favorites.favorite_userid = $userid
 where categorie_id=$categoryid
 union ALL
-SELECT *,  0 as favorite
+SELECT itemsview.*, round( (itemsview.item_price-(itemsview.item_price*itemsview.item_discount/100)),2 )as itempricediscount ,0 as favorite
 from itemsview
 WHERE item_id not in ( SELECT itemsview.item_id from itemsview
             inner join favorites on itemsview.item_id = favorites.favorite_itemid

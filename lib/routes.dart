@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:get/get_navigation/src/routes/get_route.dart';
 import 'package:mvc_commers/core/constant/routes.dart';
 import 'package:mvc_commers/core/middleware/mymiddleware.dart';
+import 'package:mvc_commers/view/screen/checkoutscreen.dart';
+import 'package:mvc_commers/view/screen/address/addAdreesscreen.dart';
+import 'package:mvc_commers/view/screen/address/addressmengament.dart';
 import 'package:mvc_commers/view/screen/auth/forgetPassword/forgetpasswordscreen.dart';
 import 'package:mvc_commers/view/screen/auth/verifycodesignupscreen.dart';
 import 'package:mvc_commers/view/screen/auth/loginScreen.dart';
@@ -36,7 +39,10 @@ import 'package:mvc_commers/view/screen/productdetailsscreen.dart';
   GetPage(name:AppRoutes.itemsscreen , page: () =>const ItemsScreen()),
   GetPage(name:AppRoutes.productdetails , page: () => const ProductDetailsScreen()),
   GetPage(name:AppRoutes.myFavoritesScreen , page: () => const MyFavoritesScreen()),
-  GetPage(name:AppRoutes.itemsCartscreen , page: () => const CartScreen()),
+  GetPage(name:AppRoutes.itemsCartscreen , page: () => const ItemsCartScreen()),
   GetPage(name:AppRoutes.settingsScreen , page: () => const MyFavoritesScreen()),
+  GetPage(name:AppRoutes.addAddreesscreen , page: () => const AddAdreesScreen(), ),
+  GetPage(name:AppRoutes.mengamentAddreesscreen , page: () => const AddressMengamentScreen()),
+  GetPage(name:AppRoutes.checkoutScreen , page: () => const CheckoutScreen()),
  
   ];

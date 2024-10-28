@@ -6,6 +6,7 @@ import 'package:mvc_commers/core/class/statusRequest.dart';
 import 'package:mvc_commers/core/functions/checkInternet.dart';
 
 class Crud {
+
   Future<Either<StatusRequest, Map>> postData(String linkeuri, Map data) async {
     try {
       // if ( await checkInternet()) {
@@ -20,7 +21,7 @@ class Crud {
         
           return Right(responceBody);
         }
-         else {
+        else {
           
           return const Left(StatusRequest.serverfailure);
         }

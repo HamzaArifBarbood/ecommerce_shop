@@ -3,5 +3,5 @@ include "../connect.php";
 $email=filterRequest("email");
 $password=sha1($_POST["password"]);
 
-getData('users',"user_email=? AND user_password=? AND user_approve=1",array($email,$password));
+getData('users',"user_email=? AND user_password=?",array($email,$password));
 ?>

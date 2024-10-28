@@ -12,7 +12,7 @@ $stmt->execute();
 $count=$stmt->rowCount();
 if($count>0){
         $countprice=$stmt->fetch(PDO::FETCH_ASSOC);
-        echo json_encode(array("status"=>"success","data"=>$data,"countprice"=>$countprice));
+        echo json_encode(array("status"=>"success","datacart"=>$data,"countprice"=>$countprice));
           
 }else{
         echo json_encode(array("status"=>"failure"));

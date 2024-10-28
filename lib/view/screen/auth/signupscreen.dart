@@ -7,7 +7,7 @@ import 'package:mvc_commers/core/functions/alertexitapp.dart';
 import 'package:mvc_commers/core/functions/validinput.dart';
 import 'package:mvc_commers/view/widget/auth/custombuttonauth.dart';
 import 'package:mvc_commers/view/widget/auth/customtextbodyauth.dart';
-import 'package:mvc_commers/view/widget/auth/customtextformauth.dart';
+import 'package:mvc_commers/core/sharsed/customTextForm.dart';
 import 'package:mvc_commers/view/widget/auth/customtextsignuporsignin.dart';
 import 'package:mvc_commers/view/widget/auth/customtexttitleauth.dart';
 
@@ -49,7 +49,7 @@ class SignUpScreen extends StatelessWidget {
                       const SizedBox(
                         height: 30,
                       ),
-                      customTextFormAuth(
+                      CustomTextForm(
                         valid: (val) {
                          return validInput(val!,50 , 5, 'username');
                         },
@@ -59,7 +59,7 @@ class SignUpScreen extends StatelessWidget {
                         iconData: Icons.person_outline,
                        mycontroller: controller.userNamecontroller,
                       ),
-                      customTextFormAuth(
+                      CustomTextForm(
                         valid: (val) {
                         return  validInput(val!, 100, 5, 'email');
                         },
@@ -69,7 +69,7 @@ class SignUpScreen extends StatelessWidget {
                         iconData: Icons.email_outlined,
                        mycontroller: controller.emailcontroller,
                       ),
-                      customTextFormAuth(
+                      CustomTextForm(
                         valid: (val) {
                          return validInput(val!, 11, 5, 'phone');
                         },
@@ -79,7 +79,7 @@ class SignUpScreen extends StatelessWidget {
                         iconData: Icons.phone_android_outlined,
                        mycontroller: controller.phonecontroller,
                       ),
-                      GetBuilder<SignUpControllerImp>(builder: (controller) => customTextFormAuth(
+                      GetBuilder<SignUpControllerImp>(builder: (controller) => CustomTextForm(
                         valid: (val) {
                          return validInput(val!, 15, 5, 'password');
                         },

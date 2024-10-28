@@ -41,8 +41,11 @@ class  SettingsScreen extends StatelessWidget {
                 ],
               ),
                SizedBox(height:20),
-                 Card(child: ListTile(title: Text("تفعيل الاشعارات"),trailing: Switch(value: true, onChanged: (value) { },),)),
+                 Card(child: ListTile(  title: Text("تفعيل الاشعارات"),trailing: Switch(value: true, onChanged: (value) { },),)),
                  Card(child: ListTile(title: Text("الاتصال"),trailing:Icon(Icons.phone),)),
+                 Card(child: ListTile(onTap: () {
+                   controller.goToAddAddrees();
+                 }, title: Text("العنوان"),trailing:Icon(Icons.phone),)),
                  Card(child: ListTile(title: Text("حول"),trailing: Icon(Icons.info),)),
                  Card(child: ListTile(onTap: () {
                   controller.logout();

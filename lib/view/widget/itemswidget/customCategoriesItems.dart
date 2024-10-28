@@ -5,7 +5,7 @@ import 'package:mvc_commers/core/constant/AppColors.dart';
 import 'package:mvc_commers/core/functions/translateDatabase.dart';
 import 'package:mvc_commers/data/model/categoriesmodel.dart';
 
-class ListCategoriesItems extends GetView<itemsControllerImp> {
+class ListCategoriesItems extends GetView<ItemsControllerImp> {
   const ListCategoriesItems({super.key});
 
   @override
@@ -30,7 +30,7 @@ class ListCategoriesItems extends GetView<itemsControllerImp> {
   }
 }
 
-class CategoriesCard extends GetView<itemsControllerImp> {
+class CategoriesCard extends GetView<ItemsControllerImp> {
   final CategoriesModel categoriesModel;
   const CategoriesCard({super.key, required this.categoriesModel});
 
@@ -40,7 +40,7 @@ class CategoriesCard extends GetView<itemsControllerImp> {
       onTap:(){
      controller.changeCat(categoriesModel.categorieId!);
       } ,
-      child: GetBuilder<itemsControllerImp>(
+      child: GetBuilder<ItemsControllerImp>(
         builder: (controller) {
           return Container(
             alignment: Alignment.center,

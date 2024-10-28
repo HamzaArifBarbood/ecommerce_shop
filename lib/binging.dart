@@ -6,6 +6,7 @@ import 'package:mvc_commers/data/datasourse/remote/test_data.dart';
 class Mybinding extends Bindings{
   @override
   void dependencies() {
+    
    Get.put( Crud());
   }
 

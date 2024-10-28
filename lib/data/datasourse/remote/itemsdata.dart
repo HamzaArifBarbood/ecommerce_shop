@@ -12,4 +12,12 @@ var response=await crud.postData(AppLinkes.items, {
 });
 return response.fold((l) => l, (r) => r,);
   }
+   searchData(String itemName)async{
+    
+var response=await crud.postData(AppLinkes.search, {
+   "searchname":itemName,
+  
+});
+return response.fold((l) => l, (r) => r,);
+  }
 }
