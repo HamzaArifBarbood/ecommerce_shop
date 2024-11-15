@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 28 أكتوبر 2024 الساعة 11:02
+-- Generation Time: 15 نوفمبر 2024 الساعة 20:28
 -- إصدار الخادم: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -54,33 +54,54 @@ INSERT INTO `address` (`address_id`, `address_userid`, `address_name`, `address_
 CREATE TABLE `cart` (
   `cart_id` int(11) NOT NULL,
   `cart_userid` int(11) NOT NULL,
-  `cart_itemid` int(11) NOT NULL
+  `cart_itemid` int(11) NOT NULL,
+  `cart_orderid` int(11) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- إرجاع أو استيراد بيانات الجدول `cart`
 --
 
-INSERT INTO `cart` (`cart_id`, `cart_userid`, `cart_itemid`) VALUES
-(151, 6, 2),
-(152, 6, 2),
-(153, 6, 2),
-(154, 6, 2),
-(155, 6, 2),
-(156, 6, 2),
-(157, 6, 2),
-(158, 6, 2),
-(159, 6, 2),
-(160, 6, 2),
-(161, 6, 2),
-(162, 6, 2),
-(163, 6, 2),
-(164, 6, 2),
-(165, 6, 2),
-(166, 6, 2),
-(167, 6, 2),
-(168, 6, 1),
-(169, 6, 1);
+INSERT INTO `cart` (`cart_id`, `cart_userid`, `cart_itemid`, `cart_orderid`) VALUES
+(503, 3, 2, 51),
+(504, 3, 2, 51),
+(505, 3, 1, 51),
+(506, 3, 3, 51),
+(507, 3, 2, 53),
+(508, 3, 1, 53),
+(509, 3, 1, 53),
+(510, 3, 3, 53),
+(511, 3, 2, 54),
+(512, 3, 2, 58),
+(513, 3, 2, 59),
+(514, 3, 2, 60),
+(515, 3, 2, 61),
+(516, 3, 2, 62),
+(517, 3, 2, 63),
+(518, 3, 2, 65),
+(519, 3, 2, 66),
+(520, 3, 2, 67),
+(521, 3, 2, 68),
+(522, 3, 2, 69),
+(523, 3, 2, 69),
+(524, 3, 2, 70),
+(525, 3, 2, 70),
+(526, 3, 3, 71),
+(527, 3, 2, 72),
+(528, 3, 2, 72),
+(529, 3, 2, 73),
+(530, 3, 2, 74),
+(531, 3, 2, 74),
+(532, 3, 2, 74),
+(533, 3, 1, 74),
+(534, 3, 1, 74),
+(535, 3, 2, 75),
+(536, 3, 2, 76),
+(537, 3, 2, 76),
+(538, 3, 2, 76),
+(539, 3, 2, 76),
+(540, 3, 2, 76),
+(541, 3, 2, 0);
 
 -- --------------------------------------------------------
 
@@ -106,6 +127,7 @@ CREATE TABLE `cartview` (
 ,`cart_id` int(11)
 ,`cart_userid` int(11)
 ,`cart_itemid` int(11)
+,`cart_orderid` int(11)
 );
 
 -- --------------------------------------------------------
@@ -153,7 +175,7 @@ CREATE TABLE `coupons` (
 --
 
 INSERT INTO `coupons` (`coupon_id`, `coupon_name`, `coupon_count`, `coupon_discount`, `coupon_expiredate`) VALUES
-(1, 'hazma', 11, 10, '2024-10-27 11:37:27');
+(1, 'hazma', 8, 10, '2024-11-13 11:37:27');
 
 -- --------------------------------------------------------
 
@@ -251,6 +273,37 @@ CREATE TABLE `myfavorites` (
 -- --------------------------------------------------------
 
 --
+-- بنية الجدول `orders`
+--
+
+CREATE TABLE `orders` (
+  `order_id` int(11) NOT NULL,
+  `order_userid` int(11) NOT NULL,
+  `order_addressid` int(11) NOT NULL,
+  `order_paymentmethod` tinyint(4) NOT NULL COMMENT 'cash=>0  card=>1',
+  `order_type` tinyint(4) NOT NULL COMMENT 'delivery=>0 recive=>1',
+  `order_pricedelivery` double NOT NULL,
+  `order_price` double NOT NULL,
+  `order_totalprice` double NOT NULL DEFAULT 0,
+  `order_couponid` int(11) NOT NULL,
+  `order_coupondiscount` int(11) NOT NULL,
+  `order_datetim` datetime NOT NULL DEFAULT current_timestamp(),
+  `order_status` tinyint(4) NOT NULL DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- إرجاع أو استيراد بيانات الجدول `orders`
+--
+
+INSERT INTO `orders` (`order_id`, `order_userid`, `order_addressid`, `order_paymentmethod`, `order_type`, `order_pricedelivery`, `order_price`, `order_totalprice`, `order_couponid`, `order_coupondiscount`, `order_datetim`, `order_status`) VALUES
+(73, 3, 31, 0, 0, 908, 760, 1592, 1, 10, '2024-11-08 09:29:22', 0),
+(74, 3, 0, 1, 1, 0, 2640, 2640, 0, 0, '2024-11-08 09:31:22', 0),
+(75, 3, 40, 1, 0, 908, 760, 1668, 0, 0, '2024-11-08 09:33:44', 0),
+(76, 3, 0, 0, 1, 0, 3800, 3800, 0, 0, '2024-11-08 09:35:08', 0);
+
+-- --------------------------------------------------------
+
+--
 -- بنية الجدول `users`
 --
 
@@ -284,7 +337,7 @@ INSERT INTO `users` (`user_id`, `user_name`, `user_password`, `user_email`, `use
 --
 DROP TABLE IF EXISTS `cartview`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `cartview`  AS SELECT sum(round(`items`.`item_price` - `items`.`item_price` * `items`.`item_discount` / 100,2)) AS `totalPrice`, count(`cart`.`cart_id`) AS `quantity`, `items`.`item_id` AS `item_id`, `items`.`item_name` AS `item_name`, `items`.`item_name_ar` AS `item_name_ar`, `items`.`item_desc` AS `item_desc`, `items`.`item_desc_ar` AS `item_desc_ar`, `items`.`item_image` AS `item_image`, `items`.`item_count` AS `item_count`, `items`.`item_active` AS `item_active`, `items`.`item_price` AS `item_price`, `items`.`item_discount` AS `item_discount`, `items`.`item_date` AS `item_date`, `items`.`item_cat` AS `item_cat`, `cart`.`cart_id` AS `cart_id`, `cart`.`cart_userid` AS `cart_userid`, `cart`.`cart_itemid` AS `cart_itemid` FROM (`cart` join `items` on(`items`.`item_id` = `cart`.`cart_itemid`)) GROUP BY `cart`.`cart_itemid`, `cart`.`cart_userid` ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `cartview`  AS SELECT sum(round(`items`.`item_price` - `items`.`item_price` * `items`.`item_discount` / 100,2)) AS `totalPrice`, count(`cart`.`cart_itemid`) AS `quantity`, `items`.`item_id` AS `item_id`, `items`.`item_name` AS `item_name`, `items`.`item_name_ar` AS `item_name_ar`, `items`.`item_desc` AS `item_desc`, `items`.`item_desc_ar` AS `item_desc_ar`, `items`.`item_image` AS `item_image`, `items`.`item_count` AS `item_count`, `items`.`item_active` AS `item_active`, `items`.`item_price` AS `item_price`, `items`.`item_discount` AS `item_discount`, `items`.`item_date` AS `item_date`, `items`.`item_cat` AS `item_cat`, `cart`.`cart_id` AS `cart_id`, `cart`.`cart_userid` AS `cart_userid`, `cart`.`cart_itemid` AS `cart_itemid`, `cart`.`cart_orderid` AS `cart_orderid` FROM (`cart` join `items` on(`items`.`item_id` = `cart`.`cart_itemid`)) WHERE `cart`.`cart_orderid` = 0 GROUP BY `cart`.`cart_itemid`, `cart`.`cart_userid` ;
 
 -- --------------------------------------------------------
 
@@ -352,6 +405,14 @@ ALTER TABLE `items`
   ADD KEY `item_cat` (`item_cat`);
 
 --
+-- Indexes for table `orders`
+--
+ALTER TABLE `orders`
+  ADD PRIMARY KEY (`order_id`),
+  ADD KEY `order_addressid` (`order_addressid`),
+  ADD KEY `order_userid` (`order_userid`);
+
+--
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
@@ -371,13 +432,13 @@ ALTER TABLE `address`
 -- AUTO_INCREMENT for table `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `cart_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=439;
+  MODIFY `cart_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=542;
 
 --
 -- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `categorie_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `categorie_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `coupons`
@@ -389,13 +450,19 @@ ALTER TABLE `coupons`
 -- AUTO_INCREMENT for table `favorites`
 --
 ALTER TABLE `favorites`
-  MODIFY `favorite_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=134;
+  MODIFY `favorite_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=135;
 
 --
 -- AUTO_INCREMENT for table `items`
 --
 ALTER TABLE `items`
   MODIFY `item_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `orders`
+--
+ALTER TABLE `orders`
+  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=77;
 
 --
 -- AUTO_INCREMENT for table `users`
@@ -432,6 +499,12 @@ ALTER TABLE `favorites`
 --
 ALTER TABLE `items`
   ADD CONSTRAINT `items_ibfk_1` FOREIGN KEY (`item_cat`) REFERENCES `categories` (`categorie_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- قيود الجداول `orders`
+--
+ALTER TABLE `orders`
+  ADD CONSTRAINT `orders_ibfk_2` FOREIGN KEY (`order_userid`) REFERENCES `users` (`user_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -6,7 +6,7 @@ $data=getAllData("cartview","cart_userid=$userid",null,false);
 
 $stmt=$con->prepare("SELECT COUNT(cartview.cart_itemid) as countitems,COALESCE(SUM(cartview.totalPrice),0)as itemsprice from cartview 
         INNER JOIN users on users.user_id=cartview.cart_userid
-        WHERE users.user_id=$userid
+        WHERE users.user_id=$userid 
         ");
 $stmt->execute();
 $count=$stmt->rowCount();
