@@ -20,6 +20,8 @@ import 'package:mvc_commers/view/screen/itemsscreen.dart';
 import 'package:mvc_commers/view/screen/languageScreen.dart';
 import 'package:mvc_commers/view/screen/mainhomepage.dart';
 import 'package:mvc_commers/view/screen/onBoardingScreen.dart';
+import 'package:mvc_commers/view/screen/orders/archive.dart';
+import 'package:mvc_commers/view/screen/orders/pendingScreen.dart';
 import 'package:mvc_commers/view/screen/productdetailsscreen.dart';
 
 
@@ -44,5 +46,7 @@ import 'package:mvc_commers/view/screen/productdetailsscreen.dart';
   GetPage(name:AppRoutes.addAddreesscreen , page: () => const AddAdreesScreen(), ),
   GetPage(name:AppRoutes.mengamentAddreesscreen , page: () => const AddressMengamentScreen()),
   GetPage(name:AppRoutes.checkoutScreen , page: () => const CheckoutScreen()),
+  GetPage(name:AppRoutes.orderspendingScreen , page: () => const OrdersPendingScreen()),
+  GetPage(name:AppRoutes.archiveordersscreen , page: () => const ArchiveOrdersScreen()),
  
   ];

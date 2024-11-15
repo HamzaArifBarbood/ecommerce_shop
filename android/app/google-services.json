@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1077286876589",
+    "project_id": "mvccommers-66cdf",
+    "storage_bucket": "mvccommers-66cdf.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1077286876589:android:8d12654af2da7910f7dd24",
+        "android_client_info": {
+          "package_name": "com.example.mvc_commers"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCWZjiP2CkzDcHCSV75_yKjTB7fLVD0egs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

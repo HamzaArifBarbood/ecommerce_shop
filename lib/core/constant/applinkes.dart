@@ -1,11 +1,11 @@
 class AppLinkes{
   //أي بي الاتصال بمودم ياسر
-  static const String server="http://172.15.238.235/ecommerce";
+  static const String server="http://172.15.233.16/ecommerce";
   //آي بي الاتصال بشبكة الجوال المحلية
   //  static const String server="http://192.168.43.245/ecommerce";
 
   static const String test="$server/test.php";
-  //=====================Auth========================
+  // =====================Auth========================
   static const String signUp="$server/auth/signup.php";
   static const String login="$server/auth/login.php";
   static const String verfycodesignup ='$server/auth/verifycodesignup.php';
@@ -44,6 +44,10 @@ static const String getAddress= "$server/address/getAddress.php";
 
 //=====================coupon========================
 static const String checkCoupon= "$server/coupon/checkcoupon.php";
+
+//=====================checkout orders========================
+static const String checkOut= "$server/orders/checkout.php"; 
+static const String pendingorders= "$server/orders/pending.php"; 
 
 //=====================images========================
  static const String imagesStatic="$server/upload";

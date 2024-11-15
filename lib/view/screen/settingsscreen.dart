@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:mvc_commers/controller/settings_controller.dart';
 import 'package:mvc_commers/core/constant/AppColors.dart';
 import 'package:mvc_commers/core/constant/imageassets.dart';
+import 'package:mvc_commers/core/constant/routes.dart';
 
 class  SettingsScreen extends StatelessWidget {
   const  SettingsScreen({super.key});
@@ -43,6 +44,12 @@ class  SettingsScreen extends StatelessWidget {
                SizedBox(height:20),
                  Card(child: ListTile(  title: Text("تفعيل الاشعارات"),trailing: Switch(value: true, onChanged: (value) { },),)),
                  Card(child: ListTile(title: Text("الاتصال"),trailing:Icon(Icons.phone),)),
+                 Card(child: ListTile(onTap: () {
+                   Get.toNamed(AppRoutes.orderspendingScreen);
+                 },title: Text("Orders"),trailing:Icon(Icons.local_shipping),)),
+                 Card(child: ListTile(onTap: () {
+                   Get.toNamed(AppRoutes.archiveordersscreen);
+                 },title: Text("Archive"),trailing:Icon(Icons.archive),)),
                  Card(child: ListTile(onTap: () {
                    controller.goToAddAddrees();
                  }, title: Text("العنوان"),trailing:Icon(Icons.phone),)),

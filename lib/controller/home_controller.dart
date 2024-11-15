@@ -1,3 +1,4 @@
+import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:mvc_commers/controller/seatch_controller.dart';
@@ -37,10 +38,7 @@ String? lang;
   }
   
   @override
-  void onClose() {
-    searchController.dispose();
-    super.onClose();
-  }
+  
   @override
   initilData() {
   id   =  myservices.sharedPreferences.getInt('id');
@@ -68,6 +66,9 @@ String? lang;
       if (response['status'] == 'success') {
         categories.addAll(response['categories']['data']);
         items.addAll(response["items"]['data']);
+    //  FirebaseMessaging.instance.getToken().then((value) {
+    //    print(value);
+    //  });
         update();
       } else {
         return StatusRequest.nodata;

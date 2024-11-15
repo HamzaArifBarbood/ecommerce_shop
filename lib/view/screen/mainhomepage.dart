@@ -11,6 +11,7 @@ class MainHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Get.put(MainhomepageControllerImp());
+    
     return GetBuilder<MainhomepageControllerImp>(builder: (controller) {
       return Scaffold(
         floatingActionButton: FloatingActionButton(

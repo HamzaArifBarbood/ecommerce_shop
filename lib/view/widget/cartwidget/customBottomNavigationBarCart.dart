@@ -3,18 +3,18 @@ import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:mvc_commers/controller/cart_controller.dart';
 import 'package:mvc_commers/core/constant/AppColors.dart';
-import 'package:mvc_commers/core/constant/routes.dart';
+
 import 'package:mvc_commers/view/widget/cartwidget/customButtonCart.dart';
 
 class CustomBottomNavigationBarCart extends GetView<CartControllerImp> {
-  final double priceOrder;
+  final double priceOrders;
   final String shipping;
   final double totalPrice;
   final int discountCoupon;
   final TextEditingController couponController;
   final void Function()? onApplyCoupon;
 
-  const CustomBottomNavigationBarCart( {super.key,required this.couponController,required this.priceOrder,required this.shipping,required this.discountCoupon, this.onApplyCoupon, required this.totalPrice});
+  const CustomBottomNavigationBarCart( {super.key,required this.couponController,required this.priceOrders,required this.shipping,required this.discountCoupon, this.onApplyCoupon, required this.totalPrice});
 
   @override
   Widget build(BuildContext context) {
@@ -59,7 +59,7 @@ const SizedBox(height: 8,),
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                           Text("Price",style: TextStyle(fontSize: 18, color: AppColors.thirdColor ),),
-                          Text("$priceOrder\$",style: TextStyle(fontFamily: "sana",fontSize: 18, color: AppColors.thirdColor ),),
+                          Text("$priceOrders\$",style: TextStyle(fontFamily: "sana",fontSize: 18, color: AppColors.thirdColor ),),
                         ],),
                   
                          Row(

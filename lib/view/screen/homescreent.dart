@@ -12,13 +12,14 @@ import 'package:mvc_commers/view/widget/itemswidget/customItemcardOnsearch.dart'
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
-
+       
   @override
   Widget build(BuildContext context) {
+     Get.put(HomeControllerimp());
     return Scaffold(
       
         body: GetBuilder<HomeControllerimp>(
-            init: HomeControllerimp(),
+            
             builder: (controller) {
               return HandlingDataVeiw(
                   statusrequest: controller.statusrequest,

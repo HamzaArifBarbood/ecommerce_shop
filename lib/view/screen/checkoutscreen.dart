@@ -13,7 +13,7 @@ class CheckoutScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Get.put(CheckOutController());
+  CheckOutController controller=  Get.put(CheckOutController());
     return Scaffold(
       appBar: AppBar(
         title: const Text("CheckOut"),
@@ -21,7 +21,9 @@ class CheckoutScreen extends StatelessWidget {
       bottomNavigationBar: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20),
         child: MaterialButton(
-          onPressed: () {},
+          onPressed: () {
+            controller.checkout();
+          },
           shape:
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
           color: AppColors.primaryColor,
@@ -53,11 +55,11 @@ class CheckoutScreen extends StatelessWidget {
                   onTap: () {},
                   child: InkWell(
                       onTap: () {
-                        controller.choosePaymentMethod("cash");
+                        controller.choosePaymentMethod("0"); //0=> Cash
                       },
                       child: CustomCardPaymentMethod(
                           nameMethod: "Cash On Delivery",
-                          isActiv: controller.paymentMethod == "cash"
+                          isActiv: controller.paymentMethod == "0"
                               ? true
                               : false))),
               const SizedBox(
@@ -65,12 +67,12 @@ class CheckoutScreen extends StatelessWidget {
               ),
               InkWell(
                   onTap: () {
-                    controller.choosePaymentMethod("card");
+                    controller.choosePaymentMethod("1");//1=> cards
                   },
                   child: CustomCardPaymentMethod(
                       nameMethod: "Payment Cards",
                       isActiv:
-                          controller.paymentMethod == "card" ? true : false)),
+                          controller.paymentMethod == "1" ? true : false)),
               const SizedBox(
                 height: 10,
               ),
@@ -88,12 +90,13 @@ class CheckoutScreen extends StatelessWidget {
                 children: [
                   InkWell(
                       onTap: () {
-                        controller.chooseDeliveryType("delivery");
+                        controller.chooseDeliveryType("0");//0=>Delivery
+                        controller.shippingAddressid=0;
                       },
                       child: CustomCardDeliveryType(
                           imageName: AppImageassets.delivery,
                           title: "Delivery",
-                          isActive: controller.delvirayType == "delivery"
+                          isActive: controller.delvirayType == "0"
                               ? true
                               : false)),
                   const SizedBox(
@@ -101,12 +104,12 @@ class CheckoutScreen extends StatelessWidget {
                   ),
                   InkWell(
                       onTap: () {
-                        controller.chooseDeliveryType("receipt");
+                        controller.chooseDeliveryType("1");//1=>Recive
                       },
                       child: CustomCardDeliveryType(
                           imageName: AppImageassets.driveThru,
-                          title: "Receipt",
-                          isActive: controller.delvirayType == "receipt"
+                          title: "Recive",
+                          isActive: controller.delvirayType == "1"
                               ? true
                               : false)),
                 ],
@@ -114,16 +117,17 @@ class CheckoutScreen extends StatelessWidget {
               const SizedBox(
                 height: 10,
               ),
-              Text(
+            
+              controller.delvirayType == "0"
+                  ? Column(
+                      children: [
+                          Text(
                 "Shipping Address",
                 style: TextStyle(
                     fontWeight: FontWeight.bold,
                     color: AppColors.secondColor,
                     fontSize: 17),
               ),
-              controller.delvirayType == "delivery"
-                  ? Column(
-                      children: [
                         ...List.generate(
                           controller.addressModel.length,
                           (index) => InkWell(
@@ -138,7 +142,7 @@ class CheckoutScreen extends StatelessWidget {
                                     controller.addressModel[index].addressCity!,
                                 addressStreet: controller
                                     .addressModel[index].addressStreet!,
-                                isActive: controller.shippingAddress ==
+                                isActive: controller.shippingAddressid ==
                                         controller.addressModel[index].addressid
                                     ? true
                                     : false),

@@ -18,5 +18,7 @@ class AppRoutes{
   static const String addAddreesscreen='/addAddreesscreen';
   static const String mengamentAddreesscreen='/mengamentAddreesscreen';
   static const String checkoutScreen='/checkoutScreen';
+  static const String orderspendingScreen='/orderspendingScreen';
+  static const String archiveordersscreen='/archiveordersscreen';
 
 }

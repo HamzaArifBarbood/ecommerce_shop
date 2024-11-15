@@ -18,7 +18,7 @@ class ItemsCartScreen extends StatelessWidget {
         bottomNavigationBar:
             GetBuilder<CartControllerImp>(builder: (controller) {
           return CustomBottomNavigationBarCart(
-              priceOrder: controller.priceOrder,
+              priceOrders: controller.priceOrders,
               discountCoupon: controller.discountCoupon,
               totalPrice:double.parse( controller.getTotalPrice()),
               shipping: "908",
